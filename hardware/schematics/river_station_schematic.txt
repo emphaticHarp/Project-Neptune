@@ -1,0 +1,95 @@
+/*
+ * Project Neptune - River Station Hardware Schematic
+ * 
+ * This file describes the hardware connections for the river monitoring station.
+ * 
+ * Components:
+ * - ESP32 / Arduino UNO
+ * - Ultrasonic Sensor (HC-SR04)
+ * - Soil Moisture Sensor
+ * - Rain Sensor
+ * - Water Level Detector
+ * - LoRa Module (SX1276/SX1278)
+ * - Solar Panel & Battery Module
+ */
+
+/*
+ * Pin Connections:
+ * 
+ * ESP32/Arduino UNO:
+ * ------------------
+ * 
+ * Ultrasonic Sensor (HC-SR04):
+ * - VCC: 5V
+ * - GND: GND
+ * - TRIG: D2
+ * - ECHO: D3
+ * 
+ * Soil Moisture Sensor:
+ * - VCC: 3.3V
+ * - GND: GND
+ * - DATA: A0
+ * 
+ * Rain Sensor:
+ * - VCC: 5V
+ * - GND: GND
+ * - DATA: A1
+ * 
+ * Water Level Detector:
+ * - VCC: 5V
+ * - GND: GND
+ * - DATA: A2
+ * 
+ * LoRa Module (SX1276/SX1278):
+ * - VCC: 3.3V
+ * - GND: GND
+ * - MOSI: D11
+ * - MISO: D12
+ * - SCK: D13
+ * - NSS: D10
+ * - RESET: D9
+ * - DIO0: D8
+ * 
+ * Solar Panel & Battery Module:
+ * - Connect solar panel to charge controller
+ * - Connect battery to charge controller
+ * - Connect charge controller output to ESP32/Arduino VIN and GND
+ */
+
+/*
+ * Power Management:
+ * 
+ * The river station uses a solar panel and rechargeable battery for off-grid operation.
+ * 
+ * Components:
+ * - 10W Solar Panel
+ * - Solar Charge Controller
+ * - 12V 7Ah Lead Acid Battery or 3.7V 5000mAh LiPo Battery
+ * - DC-DC Buck Converter (to convert battery voltage to 5V for Arduino)
+ * 
+ * For power optimization:
+ * - Use sleep modes when not actively measuring or transmitting
+ * - Reduce LoRa transmission frequency during normal conditions
+ * - Increase sampling and transmission rates during alert conditions
+ */
+
+/*
+ * Weatherproofing:
+ * 
+ * The river station should be housed in a weatherproof enclosure:
+ * - IP65 or better rated enclosure
+ * - Waterproof cable glands for sensor connections
+ * - Mount solar panel at an angle for optimal sunlight and to prevent water pooling
+ * - Position ultrasonic sensor facing downward toward water surface
+ * - Use conformal coating on PCBs for additional moisture protection
+ */
+
+/*
+ * Mounting:
+ * 
+ * The river station should be mounted:
+ * - On a stable pole or structure above the maximum expected flood level
+ * - With the ultrasonic sensor positioned directly above the water surface
+ * - With the solar panel facing south (in northern hemisphere) or north (in southern hemisphere)
+ * - With clear line of sight for LoRa transmission to the main station
+ */

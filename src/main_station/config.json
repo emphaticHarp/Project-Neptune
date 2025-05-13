@@ -1,0 +1,88 @@
+{
+    "lora": {
+        "frequency": 915,
+        "spreading_factor": 10,
+        "power": 20
+    },
+    "stations": [
+        {
+            "id": "RIVER_STATION_001",
+            "name": "North River Bridge",
+            "location": {
+                "latitude": 28.6139,
+                "longitude": 77.2090
+            },
+            "alert_thresholds": {
+                "water_level": 50,
+                "rain_intensity": 700,
+                "soil_moisture": 85
+            }
+        },
+        {
+            "id": "RIVER_STATION_002",
+            "name": "East River Dam",
+            "location": {
+                "latitude": 28.6219,
+                "longitude": 77.2290
+            },
+            "alert_thresholds": {
+                "water_level": 45,
+                "rain_intensity": 650,
+                "soil_moisture": 80
+            }
+        },
+        {
+            "id": "RIVER_STATION_003",
+            "name": "South River Residential",
+            "location": {
+                "latitude": 28.6019,
+                "longitude": 77.2190
+            },
+            "alert_thresholds": {
+                "water_level": 40,
+                "rain_intensity": 600,
+                "soil_moisture": 75
+            }
+        }
+    ],
+    "alert": {
+        "sms_enabled": false,
+        "email_enabled": true,
+        "recipients": ["emergency@example.com", "rescue@example.com"],
+        "notification_interval": 300
+    },
+    "surveillance": {
+        "enabled": true,
+        "camera_sources": [
+            {
+                "id": "CAM_001",
+                "name": "North Bridge Camera",
+                "source": "0",
+                "location": {
+                    "latitude": 28.6139,
+                    "longitude": 77.2090
+                }
+            },
+            {
+                "id": "CAM_002",
+                "name": "East Dam Camera",
+                "source": "1",
+                "location": {
+                    "latitude": 28.6219,
+                    "longitude": 77.2290
+                }
+            }
+        ],
+        "analysis_interval": 10
+    },
+    "server": {
+        "host": "0.0.0.0",
+        "port": 5000,
+        "debug": false
+    },
+    "data_storage": {
+        "retention_days": 30,
+        "backup_enabled": true,
+        "backup_interval": 86400
+    }
+}
